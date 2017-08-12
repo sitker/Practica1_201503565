@@ -15,7 +15,8 @@ public class BuscaMinas_201503565 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        mPrincipal_201503565 o = new mPrincipal_201503565();  
+        o.menuPrincipal();
     }
     
 }

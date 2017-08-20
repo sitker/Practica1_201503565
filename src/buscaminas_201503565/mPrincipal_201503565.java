@@ -73,15 +73,79 @@ public class mPrincipal_201503565 {
     }
 
     private void lvlPrin(int num) {
+        matrizDibujada(num);
+        matrizMinas(num, num);
          System.out.println("El numero de la matriz es: "+ num);
+         
+         
     }
 
     private void lvlInter(int num) {
          System.out.println("El numero de la matriz es: "+ num);
+         matrizDibujada(num);
+         matrizMinas(num, num+2);
     }
 
     private void lvlExpert(int num) {
          System.out.println("El numero de la matriz es: "+ num);
+         matrizDibujada(num);
+         matrizMinas(num, num+4);
+    }
+
+    private void matrizDibujada(int num) {
+        String matrInic[][] = new String[num][num];
+         for (int c=0; c<num; c++){
+             for(int f=0; f<num; f++){
+                 matrInic[c][f]= "[X]";
+                 System.out.print(matrInic[c][f]);
+                 if(f==(num-1)){
+                     System.out.print("\n");
+                 }
+             }
+         }
+         System.out.print("\n");
+         
+    }
+
+    private void matrizMinas(int num, int mina) {
+        boolean valid;
+            valid = false;
+        
+        String matrMinas[][] = new String[num][num];
+            for (int c=0; c<num; c++){ //Llenado de matriz con 0
+               for(int f=0; f<num; f++){
+                    matrMinas[c][f]= "[0]";
+                }
+            }
+            
+        int numero, numero2;
+            for(int n=0; n<(mina); n++){
+                numero = (int) (Math.random() * num) + 0;
+                numero2 = (int) (Math.random() * num) + 0; 
+                if((matrMinas[numero][numero2]).equals("[0]")){
+                    matrMinas[numero][numero2] = "[*]";
+                    valid = true;
+                }else{
+                   do{
+                       int numN = (int) (Math.random() * num) + 0;
+                       int numN2 = (int) (Math.random() * num) + 0; 
+                        if((matrMinas[numN][numN2]).equals("[0]")){
+                            matrMinas[numN][numN2] = "[*]";
+                            valid = false;
+                        }
+                   }while(valid);
+                }
+            }
+            
+             for (int c=0; c<num; c++){
+             for(int f=0; f<num; f++){
+                 System.out.print(matrMinas[c][f]);
+                 if(f==(num-1)){
+                     System.out.print("\n");
+                 }
+             }
+         }
+            
     }
     
 }

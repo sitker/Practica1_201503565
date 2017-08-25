@@ -18,8 +18,8 @@ public class BuscaMinas_201503565 {
      * @throws java.io.IOException
      */
     public static void main(String[] args) throws IOException {
-        mPrincipal_201503565 o = new mPrincipal_201503565();  
+        mPrincipal_201503565 o = new mPrincipal_201503565();
         o.menuPrincipal();
     }
-    
+
 }
